@@ -83,7 +83,7 @@ then
           echo "Building Images"
           docker build -t $ImageName .
           echo " "
-          echo "Creating Container"
+          echo "Creating New Container"
           docker run -d -p 8000:80 --name $Cname $ImageName
            # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
       fi   
