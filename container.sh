@@ -42,7 +42,7 @@ then
                                           
                   #This Portion create the new container with the same name as you pass in the Container name
                         echo "Creating your New Container with this Name $Cname"
-                        docker container run -d  -p 8000:80 --name $Cname $ImageName
+                        docker run -d -p 8000:80 --name $Cname $ImageName
                         # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
                   # This portion is ecxecuted when the Container is runnig.
             elif [ "$RUNNING" == "true" ]
@@ -62,7 +62,7 @@ then
                         fi
 
 	                          echo "Creating your New Container with this Name $Cname"
-                            docker container run -d  -p 8000:80 --name $Cname $ImageName
+                            docker run -d -p 8000:80 --name $Cname $ImageName
                             # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
             else
 	                      if [ "$(docker ps -aq -f status=exited -f name=$Cname)" ]
@@ -71,7 +71,7 @@ then
                               echo " $Cname Container Succesfully Removed "
                         fi
                               echo "Creating  New Container"
-	                            docker container run -d  -p 8000:80 --name $Cname $ImageName
+	                            docker run -d -p 8000:80 --name $Cname $ImageName
                                 # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
                         fi
 
@@ -82,7 +82,7 @@ then
           docker build -t $ImageName .
           echo " "
           echo "Creating Container"
-          docker container run -d  -p 8000:80 --name $Cname $ImageName
+          docker run -d -p 8000:80 --name $Cname $ImageName
            # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
       fi   
 
