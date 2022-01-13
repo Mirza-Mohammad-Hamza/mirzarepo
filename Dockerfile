@@ -1,6 +1,6 @@
 FROM ubuntu:latest
-ENV DEBIAN_FRONTEND=noninteractive 
 RUN apt-get update
+ENV DEBIAN_FRONTEND=noninteractive 
 RUN apt-get install -y apache2
 RUN mkdir -p /var/lock/apache2
 RUN mkdir -p /var/run/apache2
