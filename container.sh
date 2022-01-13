@@ -69,8 +69,9 @@ then
                          then
                               docker rm $Cname
                               echo " $Cname Container Succesfully Removed "
-                        fi
+                            fi
                               echo "Creating  New Container"
+                              echo "Container Name :- $Cname  Image Name :- $ImageName"
 	                            docker run -d -p 8000:80 --name $Cname $ImageName
                                 # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
                         fi
