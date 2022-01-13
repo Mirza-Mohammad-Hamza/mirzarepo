@@ -26,7 +26,8 @@ then
                 echo ""
                 #docker pull $Doc
             # If the container is running
-            
+        echo "Container Name :- $Cname   Imagesname :- $ImageName   Docker staus :- $RUNNING"
+          
             if [ "$RUNNING" == "false" ]
              then
 	                #if container is stop  or exited > it will remove the contaier
@@ -36,7 +37,7 @@ then
                         echo " First removing this Container "
                         echo " "
                         docker rm $Cname
-	                      echo " $Cname Container Succesfully Removed "
+	                    echo " $Cname Container Succesfully Removed "
                         echo " "
                     fi
                                           
@@ -65,16 +66,16 @@ then
                             docker run -d -p 8000:80 --name $Cname $ImageName
                             # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
             else
-	                      if [ "$(docker ps -aq -f status=exited -f name=$Cname)" ]
-                         then
-                              docker rm $Cname
-                              echo " $Cname Container Succesfully Removed "
-                            fi
-                              echo "Creating  New Container"
-                              echo "Container Name :- $Cname  Image Name :- $ImageName"
+	                        # if [ "$(docker ps -aq -f status=exited -f name=$Cname)" ]
+                            # then
+                             # docker rm $Cname
+                             # echo " $Cname Container Succesfully Removed "
+                            #fi
+                              echo "Creating  New Container with this name $Cname and Image Name is :- $ImageName"
 	                            docker run -d -p 8000:80 --name $Cname $ImageName
+                               
                                 # -v /var/lib/jenkins/jobs/Pipeline/workspace/index.html:/var/www/html/index.html
-                        fi
+                        
 
       else
           echo "This Image is Not Exist"
