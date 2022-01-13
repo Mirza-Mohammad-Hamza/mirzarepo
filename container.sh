@@ -12,7 +12,7 @@ RUNNING=$(docker inspect --format="{{.State.Running}}" $Cname 2> /dev/null)
 if [ -f "Dockerfile" -a -f "image.txt" -a -f "containername.txt" ]
 then
        echo "Files are exist"
-
+    echo "Container Name :- $Cname   Imagesname :- $ImageName   Docker staus :- $RUNNING"
        #Inspecting Image name Exist or Not
        docker image inspect $ImageName > /dev/null 2>&1
       if [ "$?" -eq 0 ]
@@ -26,7 +26,7 @@ then
                 echo ""
                 #docker pull $Doc
             # If the container is running
-        echo "Container Name :- $Cname   Imagesname :- $ImageName   Docker staus :- $RUNNING"
+        
           
             if [ "$RUNNING" == "false" ]
              then
