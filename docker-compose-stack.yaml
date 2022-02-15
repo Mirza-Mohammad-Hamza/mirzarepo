@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+
+  Sooperwizer-Frontend-Dev-1:
+    image: sooperwizer-fronten:latest
+    ports:
+      - "5000:5000"
+    deploy:
+      replicas: 1
