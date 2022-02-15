@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
-  Sooperwizer-App-Staging-1:
+  Sooperwizer-App-master-1:
     image: sooperwizer-backend:latest
     ports:
       - "5001:5000"
