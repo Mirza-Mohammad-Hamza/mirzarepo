@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
-  Sooperwizer-Frontend-App-1:
+  Sooperwizer-Frontend-Stag-1:
     image: sooperwizer-fronten:latest
     ports:
       - "5000:5000"
